@@ -1,10 +1,12 @@
 class slim {
-        service { 'slim':
+	$package = 'slim'
+
+        service { $package:
                 ensure => running,
-                require => Package['slim']
+                require => Package[$package]
         }
 
-        package { 'slim':
+        package { $package:
                 ensure => installed
         }
 }

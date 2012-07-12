@@ -1,10 +1,12 @@
 class networkmanager {
-	service { 'network-manager':
+	$package = 'network-manager'
+
+	service { $package:
 		ensure => running,
-		require => Package['network-manager']
+		require => Package[$package]
 	}
 
-	package { 'network-manager':
+	package { $package:
 		ensure => installed
 	}
 }
