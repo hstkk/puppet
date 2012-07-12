@@ -1,4 +1,6 @@
 node workstation {
+	$distro = 'squeeze'
+	include apt_conf
 	include sudo
 	include networkmanager
 	include xfce
