@@ -2,7 +2,7 @@ class apt_conf {
 	$file = '/etc/apt/sources.list'
 
 	file { $file:
-		content => template('apt_conf/sources.list.erb');
+		content => template('apt_conf/etc/apt/sources.list.erb');
 	}
 
 	exec { 'aptitude update':
