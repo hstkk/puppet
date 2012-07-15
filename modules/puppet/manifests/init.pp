@@ -1,7 +1,6 @@
 class puppet {
 	$package = 'puppet'
-	package { $package:
-	}
+	package { $package: }
 
 	file { '/etc/puppet.conf':
 		content => template('puppet/etc/puppet/puppet.conf.erb'),
