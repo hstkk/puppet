@@ -1,5 +1,8 @@
 # Global default settings
 
+$server = 'srv.local'
+$distro = 'squeeze'
+
 Package {
 	ensure => 'latest',
 }
