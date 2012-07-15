@@ -6,7 +6,5 @@ class networkmanager {
 		require => Package[$package]
 	}
 
-	package { $package:
-		ensure => installed
-	}
+	package { $package: }
 }
