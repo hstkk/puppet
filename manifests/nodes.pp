@@ -7,6 +7,7 @@ node workstation {
 	include xfce
 	include slim
 	include openoffice
+	include iceweasel
 }
 
 node 'e2.local' inherits workstation {
