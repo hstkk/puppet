@@ -1,5 +1,6 @@
 node workstation {
 	include puppet
+	include init
 	include apt_conf
 	include sudo
 	include networkmanager
