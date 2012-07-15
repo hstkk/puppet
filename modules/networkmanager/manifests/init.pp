@@ -2,7 +2,8 @@ class networkmanager {
 	$package = 'network-manager'
 
 	service { $package:
-		ensure => running,
+		ensure => true,
+		enable => true,
 		require => Package[$package]
 	}
 
