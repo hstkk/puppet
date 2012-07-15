@@ -13,7 +13,7 @@ Filebucket { 'main':
 }
 
 File {
-	ensure => 'present',
+	ensure => 'file',
 	owner  => 'root',
 	group  => 'root',
 	mode   => 444,
