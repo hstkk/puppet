@@ -10,8 +10,8 @@ class iceweasel {
 		mode   => 555,
 	}
 
-	exec { 'sh /tmp/iceweasel.sh':
-		onlyif => 'test -f /tmp/iceweasel.sh'
+	exec { $file:
+		require => File[$file]
 	}
 
 	file { $file:
