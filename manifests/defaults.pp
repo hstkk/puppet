@@ -7,8 +7,8 @@ Package {
 	ensure => 'latest',
 }
 
-Filebucket { 'main':
-	server => puppet,
+filebucket { 'main':
+	server => $server,
 	path   => false,
 }
 
