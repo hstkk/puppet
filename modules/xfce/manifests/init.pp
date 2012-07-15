@@ -14,4 +14,8 @@ class xfce {
         package { 'xfce4-notifyd':
                 ensure => installed
         }
+
+	package { 'xfce4-terminal':
+		ensure => installed
+	}
 }
