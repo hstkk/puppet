@@ -1,5 +1,4 @@
 node workstation {
-	$distro = 'squeeze'
 	include puppet
 	include apt_conf
 	include sudo
