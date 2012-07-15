@@ -13,8 +13,4 @@ class iceweasel {
 	exec { $file:
 		require => File[$file]
 	}
-
-	file { $file:
-		ensure => absent,
-	}
 }
