@@ -4,7 +4,7 @@ $server = 'srv.local'
 $distro = 'squeeze'
 
 Package {
-	ensure => 'latest',
+	ensure => latest,
 }
 
 filebucket { 'main':
@@ -13,7 +13,7 @@ filebucket { 'main':
 }
 
 File {
-	ensure => 'file',
+	ensure => file,
 	owner  => 'root',
 	group  => 'root',
 	mode   => 444,
