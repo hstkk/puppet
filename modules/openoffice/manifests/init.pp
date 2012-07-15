@@ -1,9 +1,4 @@
 class openoffice {
-        package { 'openoffice.org':
-                ensure => installed
-        }
-
-	package { 'openoffice.org-l10n-fi':
-		ensure => installed
-	}
+	$packages = [ 'openoffice.org', 'openoffice.org-l10n-fi' ]
+	package { $packages: }
 }
