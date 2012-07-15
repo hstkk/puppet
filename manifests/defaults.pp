@@ -23,3 +23,8 @@ File {
 Exec {
 	path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ],
 }
+
+Service {
+	ensure => false,
+	enable => false,
+}
