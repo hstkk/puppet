@@ -1,21 +1,4 @@
 class xfce {
-        package { 'xorg':
-                ensure => installed
-        }
-
-	package { 'xfce4':
-		ensure => installed
-	}
-
-        package { 'network-manager-gnome':
-                ensure => installed
-        }
-
-        package { 'xfce4-notifyd':
-                ensure => installed
-        }
-
-	package { 'xfce4-terminal':
-		ensure => installed
-	}
+	$packages = [ 'xorg', 'xfce4', 'network-manager-gnome', 'xfce4-notifyd', 'xfce4-terminal' ]
+	package { $packages: }
 }
