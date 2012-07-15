@@ -1,7 +1,7 @@
 node workstation {
+	include apt_conf
 	include puppet
 	include init
-	include apt_conf
 	include sudo
 	include networkmanager
 	include xfce
