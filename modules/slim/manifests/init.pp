@@ -2,7 +2,8 @@ class slim {
 	$package = 'slim'
 
         service { $package:
-                ensure => running,
+		ensure => true,
+		enable => true,
                 require => Package[$package],
         }
 
