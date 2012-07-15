@@ -1,15 +1,22 @@
 # Global default settings
+
 Package {
-	ensure => 'latest'
+	ensure => 'latest',
+}
+
+Filebucket { 'main':
+	server => puppet,
+	path   => false,
 }
 
 File {
 	ensure => 'present',
 	owner  => 'root',
 	group  => 'root',
-	mode   => 444
+	mode   => 444,
+	backup => main,
 }
 
 Exec {
-	path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ]
+	path => [ '/bin/', '/sbin/' , '/usr/bin/', '/usr/sbin/' ],
 }
