@@ -1,5 +1,3 @@
 class sudo {
-	package { 'sudo':
-		ensure => installed
-	}
+	package { 'sudo': }
 }
