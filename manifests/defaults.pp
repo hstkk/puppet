@@ -1,7 +1,7 @@
 # Global default settings
 
 $server = 'srv.local'
-$distro = 'squeeze'
+$distro = 'precise'
 
 Package {
 	ensure => latest,
