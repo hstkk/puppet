@@ -3,6 +3,7 @@
 wget -o <%= deb %> <%= url %>
 dpkg -i <%= deb %>
 rm <%= deb %>
+apt-get update
 yes | apt-get install -t <%= distro %>-backports iceweasel
 
 exit 0
