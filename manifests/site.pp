@@ -1,3 +1,3 @@
 import 'templates'
-import 'nodes'
 import 'defaults'
+import 'nodes'

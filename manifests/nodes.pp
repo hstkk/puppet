@@ -1,5 +1,9 @@
 node workstation {
 	include apt_conf
-	include puppet
-	include init
 }
+
+node 'e2.local' inherits workstation {
+	include e2
+}
+
+include puppet
