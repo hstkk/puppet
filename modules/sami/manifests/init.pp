@@ -17,6 +17,10 @@ class sami {
 		ensure => 'directory',
 	}
 
+	file { '/home/sami/projects':
+		ensure => 'directory',
+	}
+
         file { '/home/sami/.bashrc':
 		source => 'puppet:///modules/sami/home/sami/.bashrc',
         }
