@@ -2,6 +2,7 @@
 
 $server = 'srv.local'
 $distro = 'precise'
+$init = [ 'puppet agent --test' ]
 
 Package {
 	ensure => latest,
