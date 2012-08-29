@@ -2,6 +2,7 @@ node workstation {
 	include apt_conf
 	include ntp
 	include init
+	include iptables
 	include dev
 	include sami
 	include desktop
