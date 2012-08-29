@@ -1,6 +1,18 @@
 class e2 {
-	$init = [ 'setpci -s 00:02.0 F4.b=00', 'ntpd -qg &' ]
-	file { '/etc/rc.local':
-		content => template('e2/etc/rc.local.erb'),
+	file { '/etc/local.d':
+		ensure => 'directory',
+	}
+
+	File {
+		mode   => 500,
+	}
+
+	$startup = [ '/etc/local.d/fix-backlight.sh&', 'ntpd -qg &' ]
+	file { '/etc/local.d/startup.sh':
+		content => template('e2/etc/local.d/startup.sh.erb'),
+	}
+
+	file { '/etc/local.d/fix-backlight.sh':
+		source => 'puppet:///modules/e2/etc/local.d/fix-backlight.sh',
 	}
 }
