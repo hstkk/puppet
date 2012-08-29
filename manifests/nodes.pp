@@ -3,6 +3,7 @@ node workstation {
 	include ntp
 	include dev
 	include sami
+	include desktop
 }
 
 node 'e2.local' inherits workstation {
