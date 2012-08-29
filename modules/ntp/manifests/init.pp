@@ -6,4 +6,6 @@ class ntp {
 		source => 'puppet:///modules/ntp/etc/ntp.conf',
 		require => Package[$package],
 	}
+
+	service { $package: }
 }
