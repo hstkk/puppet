@@ -7,7 +7,6 @@ $init = [ 'puppet agent --test' ]
 Package {
 	ensure => latest,
 	provider => aptitude,
-	require =>  Package['aptitude'],
 }
 
 filebucket { 'main':
