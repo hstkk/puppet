@@ -1,5 +1,5 @@
 class dev::java {
-	$packages = [ 'eclipse', 'openjdk-7-jre', 'openjdk-7-jdk' ]
+	$packages = [ 'eclipse', 'openjdk-7-jre', 'openjdk-7-jdk', 'mysql-server' ]
 	package { $packages: }
 
 	$path = '/tmp/repo-deb-build-0002.deb'
