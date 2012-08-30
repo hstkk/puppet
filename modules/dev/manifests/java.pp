@@ -1,5 +1,5 @@
 class dev::java {
-	$packages = [ 'eclipse-jdt', 'eclipse-pde', 'eclipse' ]
+	$packages = [ 'eclipse', 'openjdk-7-jre', 'openjdk-7-jdk' ]
 	package { $packages: }
 
 	$path = '/tmp/repo-deb-build-0002.deb'
