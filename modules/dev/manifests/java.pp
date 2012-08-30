@@ -1,6 +1,9 @@
 class dev::java {
 	$packages = [ 'eclipse', 'openjdk-7-jre', 'openjdk-7-jdk' ]
 	package { $packages: }
+	package { 'gcj-jre':
+		ensure => "purged"
+	}
 
 	$path = '/tmp/repo-deb-build-0002.deb'
 	exec { 'download-typesafe':
