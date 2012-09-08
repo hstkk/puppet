@@ -28,4 +28,8 @@ class sami {
         file { '/home/sami/.ssh/config':
 		source => 'puppet:///modules/sami/home/sami/.ssh/config',
         }
+
+	exec { 'chsh -s $(which zsh) sami':
+		require  => package['zsh'],
+	}
 }
