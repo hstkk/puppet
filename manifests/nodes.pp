@@ -4,8 +4,8 @@ node workstation {
 	include init
 	include iptables
 	include dev
-	include sami
 	include desktop
+	include sami
 }
 
 node 'e2.local' inherits workstation {
