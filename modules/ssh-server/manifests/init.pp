@@ -2,7 +2,7 @@ class ssh-server {
 	$package = 'openssh-server'
         package { $package: }
 
-	service { 'sshd':
+	service { 'ssh':
 		ensure  => true,
 		enable  => true,
 		require => Package[$package],
@@ -13,7 +13,7 @@ class ssh-server {
 	}
 
 	file { '/etc/ssh/sshd_config':
-		notify  => Service['sshd'],
+		notify  => Service['ssh'],
 		source  => 'puppet:///modules/ssh-server/etc/ssh/sshd_config',
 		require => Package[$package],
 	}
