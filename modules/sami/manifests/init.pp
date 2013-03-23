@@ -1,7 +1,10 @@
 class sami {
-	user { 'sami':
-		ensure => present,
-		shell  => '/usr/bin/zsh',
+	$user = 'sami'
+
+	user { $user:
+		ensure  => present,
+		shell   => '/usr/bin/zsh',
+		require => Package['zsh'],
 	}
 
 	File {
@@ -11,18 +14,22 @@ class sami {
 	}
 
 	file { '/home/sami/.gitconfig':
-		source => 'puppet:///modules/sami/home/sami/.gitconfig',
+		source  => 'puppet:///modules/sami/home/sami/.gitconfig',
+		require => User[$user],
 	}
 
 	file { '/home/sami/.ssh':
-		ensure => 'directory',
+		ensure  => 'directory',
+		require => User[$user],
 	}
 
         file { '/home/sami/.ssh/config':
-		source => 'puppet:///modules/sami/home/sami/.ssh/config',
+		source  => 'puppet:///modules/sami/home/sami/.ssh/config',
+		require => User[$user],
         }
 
 	file { '/home/sami/projects':
-		ensure => 'directory',
+		ensure  => 'directory',
+		require => User[$user],
 	}
 }
