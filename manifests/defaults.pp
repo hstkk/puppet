@@ -1,17 +1,10 @@
 # Global default settings
 
-$server = 'srv.local'
-$distro = 'precise'
-$init = [ 'puppet agent --test' ]
+$distro = 'quantal'
 
 Package {
 	ensure => latest,
 	provider => aptitude,
-}
-
-filebucket { 'main':
-	server => $server,
-	path   => false,
 }
 
 File {
@@ -19,7 +12,6 @@ File {
 	owner  => 'root',
 	group  => 'root',
 	mode   => 444,
-	backup => main,
 }
 
 Exec {

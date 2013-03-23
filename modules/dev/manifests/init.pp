@@ -1,6 +1,5 @@
 class dev {
-	include dev::java
+        package { 'git': }
 
-	$packages = [ 'fonts-inconsolata', 'git' ]
-        package { $packages: }
+	include dev::java
 }

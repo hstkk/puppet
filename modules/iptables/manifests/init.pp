@@ -2,11 +2,6 @@ class iptables {
 	$package = 'iptables'
 	package { $package: }
 
-	file { '/etc/network/if-pre-up.d':
-		ensure => 'directory',
-		mode   => 755,
-	}
-
 	File {
 		require => Package[$package],
 	}
