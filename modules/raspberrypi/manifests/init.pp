@@ -9,4 +9,10 @@ class raspberrypi {
 	exec { disable-root:
 		command => 'passwd -l root',
 	}
+
+	user { 'pi':
+		ensure     => 'purged',
+		managehome => true,
+		require    => User['sami'],
+	}
 }
