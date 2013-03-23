@@ -1,7 +1,5 @@
 # Global default settings
 
-$distro = 'quantal'
-
 Package {
 	ensure => latest,
 	provider => aptitude,

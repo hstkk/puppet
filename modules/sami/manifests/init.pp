@@ -1,6 +1,7 @@
 class sami {
 	user { 'sami':
 		ensure => present,
+		shell  => '/usr/bin/zsh',
 	}
 
 	File {
