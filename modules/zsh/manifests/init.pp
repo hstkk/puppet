@@ -1,0 +1,3 @@
+class zsh {
+	package { 'zsh': }
+}
