@@ -2,9 +2,10 @@ class sami {
 	$user = 'sami'
 
 	user { $user:
-		ensure  => present,
-		shell   => '/usr/bin/zsh',
-		require => Package['zsh'],
+		ensure     => present,
+		shell      => '/usr/bin/zsh',
+		managehome => true,
+		require    => Package['zsh'],
 	}
 
 	File {
