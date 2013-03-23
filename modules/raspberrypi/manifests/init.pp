@@ -4,4 +4,8 @@ class raspberrypi {
 	user { 'sami':
 		groups => ['sudo', 'sshusers'],
 	}
+
+	exec { disable-root:
+		command => 'passwd -l root',
+	}
 }
