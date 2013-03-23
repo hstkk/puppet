@@ -1,15 +1,11 @@
 node workstation {
-	include apt_conf
-	include ntp
-	include init
 	include iptables
-	include dev
 	include desktop
+	include dev
 	include sami
 }
 
-node 'e2.local' inherits workstation {
+node 'e2' inherits workstation {
 	include e2
 }
 
-include puppet

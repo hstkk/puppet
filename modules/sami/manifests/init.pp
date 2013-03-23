@@ -13,23 +13,15 @@ class sami {
 		source => 'puppet:///modules/sami/home/sami/.gitconfig',
 	}
 
-	file { '/home/sami/sync':
+	file { '/home/sami/.ssh':
 		ensure => 'directory',
 	}
-
-	file { '/home/sami/projects':
-		ensure => 'directory',
-	}
-
-        file { '/home/sami/.bashrc':
-		source => 'puppet:///modules/sami/home/sami/.bashrc',
-        }
 
         file { '/home/sami/.ssh/config':
 		source => 'puppet:///modules/sami/home/sami/.ssh/config',
         }
 
-	exec { 'chsh -s $(which zsh) sami':
-		require  => package['zsh'],
+	file { '/home/sami/projects':
+		ensure => 'directory',
 	}
 }
