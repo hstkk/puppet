@@ -1,3 +1,3 @@
 class desktop::pandoc {
-	package { 'pandoc': }
+	package { ['pandoc', 'texlive-latex-base']: }
 }
