@@ -1,3 +1,3 @@
 class desktop::libreoffice {
-	package { ['libreoffice', 'libreoffice-voikko']: }
+	package { ['libreoffice', 'libreoffice-voikko', 'msttcorefonts']: }
 }
