@@ -1,23 +1,16 @@
-node workstation {
+node default {
+	include zsh
+	include sami
+}
+
+node workstation inherits default {
 	include iptables
 	include desktop
-	include dev
-	include tmux
-	include zsh
-	include sami
 }
 
-node server {
-	include ntp
+node server inherits default {
 	include ssh-server
 	include git-server
-	include tmux
-	include zsh
-	include sami
-}
-
-node 'e2' inherits workstation {
-	include e2
 }
 
 node 'raspberrypi' inherits server {
