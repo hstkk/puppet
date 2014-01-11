@@ -1,7 +1,7 @@
 class sami {
 	$user = 'sami'
 
-	user { $user:
+	@user { $user:
 		ensure     => present,
 		shell      => '/usr/bin/zsh',
 		managehome => true,
