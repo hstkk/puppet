@@ -17,4 +17,6 @@ class git-server {
 	}
 
         package { $package: }
+
+	include git-server::repos
 }
