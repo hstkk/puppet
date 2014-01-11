@@ -1,9 +1,9 @@
 class raspberrypi {
 	include raspberrypi::iptables
 
-	user { 'sami':
-		groups  => ['sudo', 'sshusers'],
-		require => [Group['sshusers'], User['sami']],
+	User <| title == sami |> {
+		groups  +> ['sudo', 'sshusers'],
+		require => [Group['sshusers']],
 	}
 
 	exec { disable-root:
@@ -11,7 +11,7 @@ class raspberrypi {
 	}
 
 	user { 'pi':
-		ensure     => 'purged',
+		ensure     => 'absent',
 		managehome => true,
 		require    => User['sami'],
 	}
