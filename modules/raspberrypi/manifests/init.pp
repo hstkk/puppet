@@ -18,4 +18,16 @@ class raspberrypi {
 		managehome => true,
 		require    => User['sami'],
 	}
+
+	class { 'network::interfaces':
+		interfaces => {
+			'eth0' => {
+				'method' => 'static',
+				'address' => '192.168.1.254',
+				'netmask' => '255.255.255.0',
+				'gateway' => '192.168.1.1',
+			}
+		},
+		auto => ['eth0'],
+	}
 }
