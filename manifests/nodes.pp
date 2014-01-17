@@ -11,6 +11,7 @@ node workstation inherits default {
 node server inherits default {
 	include ssh-server
 	include git-server
+	include samba-server
 	include raspberrypi
 }
 
