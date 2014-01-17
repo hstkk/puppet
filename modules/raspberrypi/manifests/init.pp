@@ -1,5 +1,8 @@
 class raspberrypi {
-	include raspberrypi::iptables
+
+        File <| title == '/etc/iptables.up.rules' |> {
+                source => 'puppet:///modules/raspberrypi/etc/iptables.up.rules',
+        }
 
 	User <| title == sami |> {
 		groups  +> ['sudo', 'sshusers'],
