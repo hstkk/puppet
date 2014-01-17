@@ -11,7 +11,7 @@ class iptables {
 		source => 'puppet:///modules/iptables/etc/network/if-pre-up.d/iptables',
 	}
 
-        file { '/etc/iptables.up.rules':
+        @file { '/etc/iptables.up.rules':
                 source => 'puppet:///modules/iptables/etc/iptables.up.rules',
         }
 

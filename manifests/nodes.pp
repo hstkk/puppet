@@ -1,10 +1,10 @@
 node default {
+	include iptables
 	include zsh
 	include sami
 }
 
 node workstation inherits default {
-	include iptables
 	include desktop
 }
 
