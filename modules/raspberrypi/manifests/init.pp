@@ -5,8 +5,8 @@ class raspberrypi {
         }
 
 	User <| title == sami |> {
-		groups  +> ['sudo', 'sshusers'],
-		require => [Group['sshusers']],
+		groups  +> ['sudo', 'sshusers', 'smbusers'],
+		require => Group[['sshusers', 'smbusers']],
 	}
 
 	exec { disable-root:
