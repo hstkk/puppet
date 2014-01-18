@@ -4,11 +4,11 @@ class samba-server {
         }
 
 
-        file { ['/data', '/data/samba']:
+        file { ['/data', '/data/samba', '/data/samba/home']:
                 ensure  => 'directory',
         }
 
-        file { ['/data/samba/backup', '/data/samba/share']:
+        file { '/data/samba/backup':
                 ensure  => 'directory',
                 group   => 'smbusers',
                 mode    => 770,
@@ -36,24 +36,23 @@ class samba-server {
 	    'guest account = nobody',
 	  ],
 	  shares => {
+            'homes' => [
+              'comment = home directories',
+              'path = /data/samba/home/%U',
+              'browseable = no',
+              'read only = no',
+              'create mask = 0600',
+              'directory mask = 0700',
+              'valid users = %S',
+            ],
 	    'backup' => [
 	      'comment = backup',
 	      'path = /data/samba/backup',
 	      'browseable = no',
 	      'read only = no',
-	      'create mask = 0700',
+	      'create mask = 0600',
 	      'directory mask = 0700',
 	      'valid users = @smbusers',
-	    ],
-	    'share' => [
-	      'comment = share',
-	      'path = /data/samba/share',
-	      'browseable = no',
-	      'read only = no',
-	      'create mask = 0660',
-	      'directory mask = 0770',
-	      'valid users = @smbusers',
-	      'force group = +smbusers',
 	    ],
 	  },
 	}
