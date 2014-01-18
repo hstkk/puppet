@@ -30,4 +30,21 @@ class raspberrypi {
 		},
 		auto => ['eth0'],
 	}
+
+	mount { '/data':
+		device  => 'LABEL=backup',
+		fstype  => 'auto',
+		ensure  => 'mounted',
+		options => 'defaults,noatime',
+		atboot  => 'true',
+	}
+
+	raspberrypi::user { ['koti', 'anna']: }
+
+        file { '/data/samba/home/sami':
+                ensure  => 'directory',
+                owner   => 'sami',
+                mode    => 700,
+                require => [File['/data/samba/home'], User['sami']],
+        }
 }
