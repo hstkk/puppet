@@ -35,7 +35,7 @@ class raspberrypi {
 		device  => 'LABEL=backup',
 		fstype  => 'auto',
 		ensure  => 'mounted',
-		options => 'defaults,noatime',
+		options => 'defaults,noatime,nodiratime',
 		atboot  => 'true',
 	}
 
