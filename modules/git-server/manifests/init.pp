@@ -9,13 +9,6 @@ class git-server {
 		require    => [Group['sshusers'], Package[$package]],
 	}
 
-	file { '/home/git/.ssh':
-		ensure  => 'directory',
-		owner   => 'git',
-		group   => 'git',
-		require => User['git'],
-	}
-
         package { $package: }
 
 	include git-server::repos
