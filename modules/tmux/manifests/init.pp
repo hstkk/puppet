@@ -1,0 +1,3 @@
+class tmux {
+	package { 'tmux': }
+}

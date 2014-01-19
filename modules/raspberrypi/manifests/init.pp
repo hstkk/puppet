@@ -1,13 +1,9 @@
 class raspberrypi {
+	include raspberrypi::sami
 
         File <| title == '/etc/iptables.up.rules' |> {
                 source => 'puppet:///modules/raspberrypi/etc/iptables.up.rules',
         }
-
-	User <| title == sami |> {
-		groups  +> ['sudo', 'sshusers', 'smbusers'],
-		require => Group[['sshusers', 'smbusers']],
-	}
 
 	exec { disable-root:
 		command => 'passwd -l root',
@@ -40,11 +36,4 @@ class raspberrypi {
 	}
 
 	raspberrypi::user { ['koti', 'anna']: }
-
-        file { '/data/samba/home/sami':
-                ensure  => 'directory',
-                owner   => 'sami',
-                mode    => 700,
-                require => [File['/data/samba/home'], User['sami']],
-        }
 }
