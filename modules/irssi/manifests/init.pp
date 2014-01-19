@@ -1,0 +1,3 @@
+class irssi {
+	package { 'irssi': }
+}
