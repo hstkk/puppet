@@ -20,12 +20,13 @@ class raspberrypi::sami {
 	}
 
 	ssh_authorized_key { 'sami':
-		user => 'sami',
-		require => User['sami'],
+		user    => 'sami',
+		options => 'command="tmux has-session && exec tmux attach || exec tmux"',
+		require => [User['sami'], Package['tmux']],
 	}
 
 	ssh_authorized_key { 'git':
-		user => 'git',
+		user    => 'git',
 		require => User['git'],
 	}
 }
