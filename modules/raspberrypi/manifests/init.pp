@@ -1,5 +1,6 @@
 class raspberrypi {
 	include raspberrypi::sami
+	include raspberrypi::git
 
         File <| title == '/etc/iptables.up.rules' |> {
                 source => 'puppet:///modules/raspberrypi/etc/iptables.up.rules',
