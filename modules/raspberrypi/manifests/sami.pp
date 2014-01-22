@@ -26,6 +26,6 @@ class raspberrypi::sami {
 	}
 
 	ssh_authorized_key { 'pro':
-		key => 'AAAB3NzaC1yc2EAAAABJQAAAQEApueh4QpzDy6m3Nd8zfdEw1t3I4BwOZLKAh3O6lodUflZDZ2kc3b+j21+mniMEGeWjjqvsfNeaBZZrnADuDyC7zNdyT+uEUaEcwBbQPKmn2NjCHHuNECbGvLXygv2TrWifiIYxjnONmInseICX3UYE7F6tdhy+aaWUxO1WrRzEJpqCDAbwMsNQFewUzAaFtK+ssODdUJNfNMy7I98VMmBEKaUMGxjCls7vkIJbs8lJC30sRw3Aogavbl33VrcpA2j+bQMcVqn4m8oSgf2Ay923VITw+rHFetyXfKuqv9sudVXBv4FcY/ou9OL0gJoQKW1IE3jOnDkxBqRqK08HE0WZw==',
+		key => 'AAAAB3NzaC1yc2EAAAABJQAAAQEApueh4QpzDy6m3Nd8zfdEw1t3I4BwOZLKAh3O 6lodUflZDZ2kc3b+j21+mniMEGeWjjqvsfNeaBZZrnADuDyC7zNdyT+uEUaEcwBb QPKmn2NjCHHuNECbGvLXygv2TrWifiIYxjnONmInseICX3UYE7F6tdhy+aaWUxO1 WrRzEJpqCDAbwMsNQFewUzAaFtK+ssODdUJNfNMy7I98VMmBEKaUMGxjCls7vkIJ bs8lJC30sRw3Aogavbl33VrcpA2j+bQMcVqn4m8oSgf2Ay923VITw+rHFetyXfKu qv9sudVXBv4FcY/ou9OL0gJoQKW1IE3jOnDkxBqRqK08HE0WZw==',
 	}
 }
