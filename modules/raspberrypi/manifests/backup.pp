@@ -9,7 +9,7 @@ define raspberrypi::backup (
 	} ->
 
 	if ! defined(Package['rsync']) {
-		package['rsync']
+		package { 'rsync']: }
 	} ->
 
 	cron { "backup-${src}":
