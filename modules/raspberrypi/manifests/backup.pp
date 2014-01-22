@@ -2,8 +2,10 @@ define raspberrypi::backup (
 	$src = $title,
 	$dest = '/data/backup',
 ) {
-	file { $dest:
-		ensure => 'directory',
+	if ! defined(File[$dest]) {
+		file { $dest:
+			ensure => 'directory',
+		}
 	}
 
 	cron { "backup-${src}":
