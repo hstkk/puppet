@@ -37,4 +37,6 @@ class raspberrypi {
 	}
 
 	raspberrypi::user { ['koti', 'anna']: }
+
+	raspberrypi::backup { ['/home/git', '/home/sami/logs']: }
 }
