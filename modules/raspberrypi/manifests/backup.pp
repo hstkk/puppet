@@ -15,6 +15,6 @@ define raspberrypi::backup (
 	cron { "backup-${src}":
 		command => "rsync --archive --delete ${src} ${dest} &> /dev/null",
 		special => 'daily',
-		require => [Package['rsync'], File[$src, $dest]],
+		require => [Package['rsync'], File[$dest]],
 	}
 }
