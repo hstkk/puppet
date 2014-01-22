@@ -6,15 +6,15 @@ define raspberrypi::backup (
 		file { $dest:
 			ensure => 'directory',
 		}
-	} ->
+	}
 
 	if ! defined(Package['rsync']) {
 		package { 'rsync': }
-	} ->
+	}
 
 	cron { "backup-${src}":
 		command => "rsync --archive --delete ${src} ${dest} &> /dev/null",
 		special => 'daily',
-		require => File[$src],
+		require => [Package['rsync'], File[$src, $dest]],
 	}
 }
