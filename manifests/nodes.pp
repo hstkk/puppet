@@ -15,6 +15,7 @@ node server inherits default {
 	include samba-server
 	include irssi
 	include raspberrypi
+	include yle-dl
 }
 
 node 'raspberrypi' inherits server {
