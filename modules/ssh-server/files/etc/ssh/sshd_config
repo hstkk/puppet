@@ -98,3 +98,6 @@ DenyUsers root
 DenyGroups root
 ## Limit User Logins
 AllowGroups sshusers
+
+Match user gateway
+	GatewayPorts yes
