@@ -34,6 +34,7 @@ class samba-server {
 	    'passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .',
 	    'pam password change = yes',
 	    'guest account = nobody',
+		'mangled names = no',
 	  ],
 	  shares => {
             'homes' => [
