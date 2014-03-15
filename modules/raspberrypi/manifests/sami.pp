@@ -28,4 +28,8 @@ class raspberrypi::sami {
 	ssh_authorized_key { 'pro':
 		key => 'AAAAB3NzaC1yc2EAAAABJQAAAQEArHIW98FxWuGJCz5WHw89w01iYlNYZo2SNR6Uf2LiKuCbhNyBLLXoFjmcETNpB8CKqhv+ejWn+mxmBhT/4qcIQ/q4uR9QasnIqOn4dWcQBdZ/4bUvBEbGL10zmqXQU+KOQ3DmUbtIAKSvbHNJLtkCQEqXOzmxIND2OphUHci57L+ui8crsuxtPscPAg9SC7e6ADErjYYWphL8lElYtLwGCDWRkJGD8X+OwO6IsN4stAG/+Pgz9Baf3JPXi2Jf8u4UDjptgKzhVW5TlWUWIXlJ3/rKwhw7xB8edP445ueAon5Tvha3q6m/w2wllPNiI2QDBfBbQgGb1TCyc6Md2o4OCw==',
 	}
+	
+	ssh_authorized_key { 'nexus7':
+		key => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCvc8BuKIb7/Sj/vqoqXK+tb4amiqxRNOZNxqRaid37eXoWMugY9vntznVUbAQZ6amlQBKG/dndDIIBUxXE3Fc7alXowPbQ+B3uwIHeGo+zTSTnbOLCYjXbMf5cMPsXJ+qBwOJLJbTWoU4IInpnLNAfnX9G/PsHgGhIn9abfHD2EYWtLzJA39vcX+TCLCrSZEqZG7znGLH7IDtd+27PsyyIKLNZ+AUHy8gicnutswrXweXRCnsS7pxe2zdtUikYlr8hCCCE+qjD/IyGZ88daA5C853HbhIsor+wVSzq6wbFPLmbre0z4YYr2RUTcSaWnjau9GZscQGye9vkbtboJHs7',
+	}
 }
